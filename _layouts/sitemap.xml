@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{% assign num = page.tot %}{% assign nump = num | divided_by: site.sitemap_limit | ceil %}{% for i in (1..nump) %}
+    <sitemap>
+        <loc>{{site.url}}/post-sitemap{{i}}.xml</loc>
+        <lastmod>{{ page.totd[i] | date_to_xmlschema }}</lastmod>
+    </sitemap>{% endfor %}
+</sitemapindex>

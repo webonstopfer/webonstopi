@@ -1,0 +1,8 @@
+{% for post in page["relateds"] %}
+    <div class="mb-4">
+        <a href="{{site.url}}/{{post['url']}}">
+        <div class="d-flex align-items-center justify-content-center shadow-sm"><img class="w-100 fh-100" src="{{post['img']}}" data-src="{{post['img']}}" alt="{{ post['title'] | strip_html | escape }}"></div>
+        </a>
+        <h2 class="h6 mt-2 bwr">{{ post['title'] | strip_html | escape }}</h2>
+    </div>
+{% endfor %}

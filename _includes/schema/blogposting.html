@@ -1,0 +1,29 @@
+<script type='application/ld+json'>{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{site.url}}{{page.url}}"
+    },
+    "headline":{{ ptitle | escape | jsonify }},
+    "description": {{video_description_text | truncate: 600 | escape  | jsonify }},
+    "url":"{{site.url}}{{page.url}}",
+    "datePublished":"{{pdate | date_to_xmlschema}}",
+    "dateModified":"{{pdate | date_to_xmlschema}}",
+    "image": {
+        "@type": "ImageObject",
+        "url": "{% if pimg contains 'blank.gif' %}https://lh3.googleusercontent.com/ULB6iBuCeTVvSjjjU1A-O8e9ZpVba6uvyhtiWRti_rBAs9yMYOFBujxriJRZ-A=w1200{% else %}{{ pimg }}{% endif %}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": {{ site.title | jsonify }},
+        "logo": {
+          "@type": "ImageObject",
+          "url":"{{site.url}}/logo.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": {{ site.title | jsonify }}
+    }
+}</script>
